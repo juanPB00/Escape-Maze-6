@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c4o2uqr35m2qj"]
+
+[ext_resource type="Script" uid="uid://c8xrhjaes17hc" path="res://Maze/Scripts/Exit/exit_door.gd" id="1_j0onq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ag8sx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_awdbv"]
+
+[node name="ExitDoor" type="Area3D" unique_id=1317728815]
+collision_layer = 2
+script = ExtResource("1_j0onq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=157152680]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("BoxMesh_ag8sx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1741549014]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_awdbv")
