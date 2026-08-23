@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://d05lypir8qm3t"]
+
+[ext_resource type="PackedScene" uid="uid://4f46x1iel00s" path="res://Maze/Scenes/Player/player.tscn" id="1_e5a05"]
+[ext_resource type="PackedScene" uid="uid://dy0ucs4i0jhi1" path="res://Maze/Scenes/Items/key.tscn" id="2_e5a05"]
+[ext_resource type="Script" uid="uid://c65jybujr1fkx" path="res://Maze/Scripts/ui.gd" id="3_kv214"]
+[ext_resource type="PackedScene" uid="uid://c4o2uqr35m2qj" path="res://Maze/Scenes/exit_door.tscn" id="4_wihao"]
+
+[sub_resource type="Sky" id="Sky_h43bo"]
+
+[sub_resource type="Environment" id="Environment_6gfml"]
+background_mode = 2
+background_energy_multiplier = 0.0
+sky = SubResource("Sky_h43bo")
+
+[sub_resource type="BoxMesh" id="BoxMesh_6gfml"]
+size = Vector3(20, 0.2, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awdbv"]
+albedo_color = Color(0.15507269, 0.13820031, 0.14149284, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ag8sx"]
+size = Vector3(19.687225, 1.0310059, 19.797073)
+
+[node name="main" type="Node3D" unique_id=1683083082]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=50561714]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 2.0799165, 2.0881119, -6.081534)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1004855467]
+environment = SubResource("Environment_6gfml")
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=994337295]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1782059520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6010277, -0.57682985, -0.5349356)
+mesh = SubResource("BoxMesh_6gfml")
+surface_material_override/0 = SubResource("StandardMaterial3D_awdbv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1129210364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78275394, -0.72106934, -0.35712433)
+shape = SubResource("BoxShape3D_ag8sx")
+
+[node name="Player" parent="." unique_id=62951298 instance=ExtResource("1_e5a05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035597682, 0.47517586, 0.23558569)
+
+[node name="Key" parent="." unique_id=101154416 instance=ExtResource("2_e5a05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3110037, -0.58641803, 0.9630227)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1314073977]
+script = ExtResource("3_kv214")
+
+[node name="KeyLabel" type="Label" parent="UI" unique_id=1244780403]
+propagate_maximum_size = true
+offset_left = -171.0
+offset_top = -109.0
+offset_right = -67.0
+offset_bottom = -86.0
+text = "🔑 Keys: 0 / 3"
+
+[node name="Key2" parent="." unique_id=756750377 instance=ExtResource("2_e5a05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.072959, -0.29365742, -6.0460157)
+
+[node name="Key3" parent="." unique_id=383864413 instance=ExtResource("2_e5a05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.82945, -0.4927342, -1.8510816)
+
+[node name="ExitDoor" parent="." unique_id=1317728815 instance=ExtResource("4_wihao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.911935, 1.1087433, 0.8115525)
