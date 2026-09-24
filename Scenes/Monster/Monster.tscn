@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://f8lqa3cnwdat"]
+
+[ext_resource type="Script" uid="uid://2oon6q16wju4" path="res://Scenes/Monster/monster.gd" id="1_xr6n7"]
+[ext_resource type="PackedScene" uid="uid://lt0hfl6vkilo" path="res://Assets/HorrorProps/Slime Enemy by Charlie - 6O6XUMssAW (1).glb" id="2_5kmi8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l6h1h"]
+radius = 0.5883789
+height = 1.5457764
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l6h1h"]
+radius = 8.905
+
+[node name="Monster" type="CharacterBody3D" unique_id=461332806]
+script = ExtResource("1_xr6n7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=840013773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5172589, 0.13761783)
+shape = SubResource("CapsuleShape3D_l6h1h")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1605996789]
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=1980733561]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=350940439]
+shape = SubResource("SphereShape3D_l6h1h")
+
+[node name="Root Scene" parent="." unique_id=389513431 instance=ExtResource("2_5kmi8")]
+transform = Transform3D(65, 0, 0, 0, 65, 0, 0, 0, 65, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Root Scene/RootNode/enemy2cog_1/alljoints_1_ZERO/alljoints_1" parent_id_path=PackedInt32Array(389513431, 1704820339) index="0" unique_id=1933643817]
+bones/117/rotation = Quaternion(3.4392566e-33, 4.918371e-32, -0.06975647, 0.9975641)
+bones/119/rotation = Quaternion(-3.8348896e-32, -1.9501518e-31, -0.06975647, 0.9975641)
+bones/121/rotation = Quaternion(-0.026662385, 0.033984024, -0.06876456, 0.99669737)
+bones/123/rotation = Quaternion(-0.03087192, 0.017910542, -0.069209374, 0.9969635)
+bones/125/rotation = Quaternion(-0.03101266, 0.010528606, -0.06945542, 0.9970473)
+bones/157/rotation = Quaternion(-3.081488e-33, 0, 0, 1)
+bones/157/scale = Vector3(1, 1, 1)
+bones/159/rotation = Quaternion(-3.081488e-33, -9.8607613e-32, 3.469447e-18, 1)
+bones/159/scale = Vector3(1, 1, 1)
+bones/161/rotation = Quaternion(-9.860761e-32, 0, 0, 1)
+bones/161/scale = Vector3(1, 1, 1)
+bones/163/rotation = Quaternion(4.93038e-32, 0, 0, 1)
+bones/163/scale = Vector3(1, 1, 1)
+bones/165/rotation = Quaternion(8.0118686e-32, 0, 0, 1)
+bones/165/scale = Vector3(1, 1, 1)
+bones/167/rotation = Quaternion(5.5466777e-32, 0, 9.860761e-32, 1)
+bones/167/scale = Vector3(1, 1, 1)
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="animation_finished" from="Root Scene/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="Root Scene"]

@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bodndepwqtk08"
+path.s3tc="res://.godot/imported/Slime Enemy by Charlie - 6O6XUMssAW_lambert3SG_Base_Color.png-b1ce027afc948309f6c781a07f170d70.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "311c34f67e73ebf65e014809c6c604db"
+}
+
+[deps]
+
+source_file="res://Assets/HorrorProps/Textures/Slime Enemy by Charlie - 6O6XUMssAW_lambert3SG_Base_Color.png"
+dest_files=["res://.godot/imported/Slime Enemy by Charlie - 6O6XUMssAW_lambert3SG_Base_Color.png-b1ce027afc948309f6c781a07f170d70.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
