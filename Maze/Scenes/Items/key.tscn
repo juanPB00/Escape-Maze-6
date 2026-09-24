@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dy0ucs4i0jhi1"]
+
+[ext_resource type="Script" uid="uid://d4ge6xo8my7jn" path="res://Maze/Scripts/Items/key.gd" id="1_pdcnr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ag8sx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ag8sx"]
+
+[node name="Key" type="Area3D" unique_id=101154416]
+collision_layer = 2
+script = ExtResource("1_pdcnr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2116357578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.6, 0.15)
+mesh = SubResource("BoxMesh_ag8sx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1635595519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.6, 0.15)
+shape = SubResource("BoxShape3D_ag8sx")

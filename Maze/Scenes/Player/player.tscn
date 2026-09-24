@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://4f46x1iel00s"]
+
+[ext_resource type="Script" uid="uid://uw1ikgathsfy" path="res://Maze/Scripts/Player/player.gd" id="1_os7au"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ag8sx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ag8sx"]
+
+[node name="Player" type="CharacterBody3D" unique_id=62951298]
+script = ExtResource("1_os7au")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=659609472]
+shape = SubResource("CapsuleShape3D_ag8sx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=823879306]
+mesh = SubResource("CapsuleMesh_ag8sx")
+
+[node name="Head" type="Node3D" parent="." unique_id=1276501679]
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=584785661]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.03915882, 0.49999988, 0.34924132)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=221800214]
+transform = Transform3D(1.815555, -0.8389042, 0, 0.8389042, 1.815555, 0, 0, 0, 2, 0, 0, 2.0498922)
+target_position = Vector3(0, 0, -3)
+collision_mask = 2
+collide_with_areas = true
