@@ -10,8 +10,13 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
 config/name="MazeEscapeFinal"
 run/main_scene="uid://cw57wqbihgau2"
+=======
+config/name="MainMenu"
+run/main_scene="res://main_menu.tscn"
+>>>>>>> 1eb54f0 (pesan commit kamu)
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -24,10 +29,12 @@ window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+<<<<<<< HEAD
 [filesystem]
 
 import/blender/enabled=false
 
+<<<<<<< HEAD
 [input]
 
 move_forward={
@@ -65,6 +72,10 @@ interact={
 ]
 }
 
+=======
+=======
+>>>>>>> 1eb54f0 (pesan commit kamu)
+>>>>>>> 68ed8da (tugas orang ke 4)
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://dc2u30ifha7r8"
-=======
-uid="uid://bhcwy7g3cn1ow"
->>>>>>> 1eb54f0 (pesan commit kamu)
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://t107gxapnnty"
+path="res://.godot/imported/WhatsApp Image 2026-08-20 at 11.20.54.jpeg-57debbab72a00cec47b75d6fa59db71c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://asset/WhatsApp Image 2026-08-20 at 11.20.54.jpeg"
+dest_files=["res://.godot/imported/WhatsApp Image 2026-08-20 at 11.20.54.jpeg-57debbab72a00cec47b75d6fa59db71c.ctex"]
 
 [params]
 
@@ -42,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
