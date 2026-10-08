@@ -1,0 +1,357 @@
+[gd_scene format=3 uid="uid://b7rt4mwk31wbn"]
+
+[ext_resource type="Script" uid="uid://dhkvghc1dryk2" path="res://main_menu.gd" id="1_jix8l"]
+[ext_resource type="Shader" uid="uid://csp1550u1k6nr" path="res://main_menu.gdshader" id="2_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://ce11t7lk6ufuk" path="res://maze.png" id="3_j5v2v"]
+[ext_resource type="FontFile" uid="uid://dknuiucww3jm6" path="res://help_me/HelpMe.ttf" id="4_iotk1"]
+[ext_resource type="AudioStream" uid="uid://cxss72yi23y65" path="res://asset/atlasaudio-horror-ambience-512255.mp3" id="5_0o4t1"]
+[ext_resource type="AudioStream" uid="uid://bexuiqfkv63it" path="res://asset/sound_effect/universfield-click-button-140881.mp3" id="5_dy7ct"]
+[ext_resource type="Script" uid="uid://vju7d21th2dr" path="res://settings_panel.gd" id="5_nlkkf"]
+[ext_resource type="FontFile" uid="uid://dc070qw0gdhrt" path="res://asset/font/lowerresolution/LowerResolution.ttf" id="7_qe12f"]
+[ext_resource type="FontFile" uid="uid://bhoxt7foiso7x" path="res://asset/font/aquifer/Aquifer.otf" id="8_w44g7"]
+[ext_resource type="FontFile" uid="uid://c8vlw5ey711kv" path="res://asset/font/aquifer/Aquifer.ttf" id="9_cm266"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqfw8"]
+shader = ExtResource("2_8qtwp")
+shader_parameter/darkness = 0.38
+shader_parameter/dust_speed = 0.35
+shader_parameter/dust_opacity = 0.28
+
+[node name="MainMenu" type="Control" unique_id=135847405]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jix8l")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=426318358]
+modulate = Color(0.30249536, 0.3024954, 0.3024954, 1)
+material = SubResource("ShaderMaterial_iqfw8")
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 653.0
+texture = ExtResource("3_j5v2v")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="judul 3" type="Label" parent="." unique_id=1833628841]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 147.0
+offset_right = 760.0
+offset_bottom = 285.0
+theme_override_colors/font_color = Color(0.67268705, 0, 0.0883074, 1)
+theme_override_fonts/font = ExtResource("4_iotk1")
+theme_override_font_sizes/font_size = 120
+text = "MAZE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="judul" type="Label" parent="." unique_id=605158651]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 69.0
+offset_right = 598.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("4_iotk1")
+theme_override_font_sizes/font_size = 70
+text = "The"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=590975167]
+stream = ExtResource("5_0o4t1")
+volume_db = -2.632
+autoplay = true
+bus = &"Music"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=1271990172]
+stream = ExtResource("5_dy7ct")
+volume_db = -6.985
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1086788025]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 307.0
+offset_right = 715.0
+offset_bottom = 552.0
+theme_override_constants/separation = 20
+
+[node name="play" type="Button" parent="VBoxContainer" unique_id=1993513265]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_w44g7")
+theme_override_font_sizes/font_size = 30
+text = "PLAY"
+
+[node name="settings" type="Button" parent="VBoxContainer" unique_id=1906196175]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_cm266")
+theme_override_font_sizes/font_size = 30
+text = "SETTING"
+
+[node name="credit" type="Button" parent="VBoxContainer" unique_id=1935952762]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_w44g7")
+theme_override_font_sizes/font_size = 30
+text = "CREDIT"
+
+[node name="exit" type="Button" parent="VBoxContainer" unique_id=1625047744]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.77798, 0, 0.008788002, 1)
+theme_override_fonts/font = ExtResource("9_cm266")
+theme_override_font_sizes/font_size = 30
+text = "EXIT"
+
+[node name="SettingsPanel" type="Panel" parent="." unique_id=1533777146]
+layout_mode = 0
+offset_left = 1156.0
+offset_right = 2308.0
+offset_bottom = 655.0
+script = ExtResource("5_nlkkf")
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel" unique_id=1138506295]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 330.0
+offset_right = 966.0
+offset_bottom = 489.0
+value = 100.0
+
+[node name="MusicValue" type="Label" parent="SettingsPanel/MusicSlider" unique_id=1713699693]
+layout_mode = 0
+offset_left = 801.0
+offset_top = 62.0
+offset_right = 843.0
+offset_bottom = 85.0
+text = "100%"
+
+[node name="volume" type="Label" parent="SettingsPanel/MusicSlider" unique_id=1859582508]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.032
+offset_left = 246.0
+offset_right = 451.6
+offset_bottom = 81.912
+theme_override_font_sizes/font_size = 30
+text = "Music Volume
+"
+horizontal_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="SettingsPanel" unique_id=1280600422]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 444.0
+offset_right = 966.0
+offset_bottom = 570.0
+
+[node name="SFXValue" type="Label" parent="SettingsPanel/HSlider2" unique_id=418650968]
+layout_mode = 0
+offset_left = 801.0
+offset_top = 48.0
+offset_right = 843.0
+offset_bottom = 71.0
+text = "100%"
+
+[node name="sfx" type="Label" parent="SettingsPanel/HSlider2" unique_id=748083261]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.032
+offset_left = 246.0
+offset_top = -17.0
+offset_right = 451.6
+offset_bottom = 47.968
+theme_override_colors/font_color = Color(0.8572472, 0, 0.13689137, 1)
+theme_override_font_sizes/font_size = 50
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="setting" type="Label" parent="SettingsPanel" unique_id=1997714801]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.032
+offset_left = 448.0
+offset_top = 30.0
+offset_right = 640.8
+offset_bottom = 132.04
+theme_override_fonts/font = ExtResource("8_w44g7")
+theme_override_font_sizes/font_size = 60
+text = "SETTINGS
+"
+
+[node name="closebutton" type="Button" parent="SettingsPanel" unique_id=1111662012]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 554.0
+offset_right = 756.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 60
+text = "< Close"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPanel" unique_id=7590316]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.061000004
+offset_left = 230.0
+offset_top = 113.0
+offset_right = 955.0
+offset_bottom = 255.045
+
+[node name="closebutton2" type="Button" parent="SettingsPanel/HBoxContainer" unique_id=1269407618]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "EZ"
+
+[node name="CreditPanel" type="Panel" parent="." unique_id=917311312]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="setting" type="Label" parent="CreditPanel" unique_id=766747151]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.032
+offset_left = 55.0
+offset_top = 28.0
+offset_right = 280.6
+offset_bottom = 127.96
+theme_override_fonts/font = ExtResource("8_w44g7")
+theme_override_font_sizes/font_size = 60
+text = "CREDITS"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CreditPanel" unique_id=292344339]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 51.0
+offset_right = -10.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CreditPanel/ScrollContainer" unique_id=744907996]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("8_w44g7")
+theme_override_font_sizes/font_size = 18
+text = "THE MAZE
+
+DIREKSI & DESAIN
+Game Designer: Juan Praba
+
+PEMROGRAMAN
+Gameplay & Systems Programmer: M Febrian 
+AI & System Programmer: Ahmad Ibrahim
+
+ARTISTIK & VISUAL
+3D Environment & Level Artist: Juan Praba 
+UI/UX & 2D Artist: Fatih Prasetya Putera
+
+AUDIO
+Sound Designer & Foley Artist: Fatih Prasetya Putera
+
+KONTRIBUSI ASET PIHAK KETIGA
+
+Aset 3D & Lingkungan:
+-Kenney
+-Itch.io
+
+Audio & Musik:
+- \"Horror Ambience\" - AtlasAudio (Pixabay)
+
+TERIMA KASIH KHUSUS
+Guru Pembimbing – Pak Maul
+SMKN 21 Jakarta
+Komunitas Godot Engine Indonesia
+#Uhuy Indonesia"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="closebuttoncredit" type="Button" parent="CreditPanel" unique_id=83496197]
+layout_mode = 0
+offset_top = 552.00006
+offset_right = 207.94133
+offset_bottom = 615.00006
+scale = Vector2(1.5292774, 1.434333)
+theme_override_font_sizes/font_size = 40
+text = "< Close"
+
+[node name="ExitPopup" type="Panel" parent="." unique_id=1994443449]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -331.0
+offset_top = -155.0
+offset_right = 334.375
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ExitPopup" unique_id=1937383326]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.125
+offset_right = 76.125
+offset_bottom = 29.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_qe12f")
+theme_override_font_sizes/font_size = 30
+text = "KeluAr GamE?"
+
+[node name="NoButton" type="Button" parent="ExitPopup" unique_id=1246463884]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.375
+offset_top = -146.0
+offset_right = 293.0
+offset_bottom = -32.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_qe12f")
+theme_override_font_sizes/font_size = 30
+text = "NO"
+
+[node name="YesButton" type="Button" parent="ExitPopup" unique_id=1040487971]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -282.375
+offset_top = -167.0
+offset_right = -34.375
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_qe12f")
+theme_override_font_sizes/font_size = 30
+text = "YESS"
+
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="SettingsPanel/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SettingsPanel/HSlider2" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="SettingsPanel/closebutton" to="." method="_on_closebutton_pressed"]
+[connection signal="pressed" from="CreditPanel/closebuttoncredit" to="." method="_on_closebuttoncredit_pressed"]
+[connection signal="pressed" from="ExitPopup/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="ExitPopup/YesButton" to="." method="_on_yes_button_pressed"]
